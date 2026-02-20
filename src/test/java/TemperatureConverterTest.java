@@ -39,6 +39,15 @@ class TemperatureConverterTest {
             assertFalse(tc.isExtremeTemperature(-40));
     }
 
+    @Test
+    @DisplayName("Test kelvinToCelsius")
+    public void kelvinToCelsiusTest() {
+        TemperatureConverter tc = new TemperatureConverter();
+        assertEquals(-273.15, tc.kelvinToCelsius(0), "Wrong kelvin conversion" );
+        assertEquals(457-273.15, tc.kelvinToCelsius(457), "Wrong kelvin conversion" );
+        assertThrows(IllegalArgumentException.class , ()-> tc.kelvinToCelsius(-5),"Invalid input not detected" ) ;
+    }
+
 
 
 }

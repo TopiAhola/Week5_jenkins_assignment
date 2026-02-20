@@ -29,6 +29,21 @@ public boolean isExtremeTemperature(double celsius){
     return (celsius > 50 || celsius < -40);
 }
 
+    /**
+     * Converts kelvin temperature to Celsius temperature
+     * @param kelvin temperature in kelvin. Has to be >= 0
+     * @return Celsius
+     */
+public double kelvinToCelsius(double kelvin){
+    if(kelvin >= 0) {
+        return kelvin - 273.15 ;
+    } else {
+        throw new IllegalArgumentException("kelvin temperature must be greater or equal to 0");
+    }
+}
+
+
+
 }
 
 
