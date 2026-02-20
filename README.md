@@ -23,7 +23,7 @@ The screenshot of the Jenkins test report.
 The link to your GitHub repository.
 
 <figure>
-<img src="week5_palautus_topi_Ahola.jpg" width="50%" height="auto" alt="Screenshot of Jenkins test reports">
+<img src="week5_palautus_topi_Ahola.jpg" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
 <figcaption>Screenshot of Jenkins test reports</figcaption>
 </figure>
 
