@@ -58,21 +58,31 @@ pipeline {
         }
         */
 
-        stage ('Build docker image'){
+ /*        stage ('Build docker image'){
             steps {
                 script {
-                    /*(name, pathToDockerfile)*/
+                     *//*(name, pathToDockerfile)*//*
                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
-        }
+        } */
+
+               stage ('Build docker image'){
+                    steps {
+
+                            /*(name, pathToDockerfile)*/
+                           bat "docker build -t "${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
+
+                    }
+                }
+
 
         /* docker push topiahola/jenkins_docker_repo:tagname */
          stage ('push docker image to dockerhub'){
             steps {
                 script {
                     //käyttää dockeria ei-oletus repositiolla
-                    docker.withRegistry("'https://index.docker.io/v1/'", DOCKERHUB_CREDENTIALS) {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDENTIALS) {
                         docker.image("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}").push()
                     }
 
