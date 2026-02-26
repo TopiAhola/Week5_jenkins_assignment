@@ -58,23 +58,23 @@ pipeline {
         }
         */
 
- /*        stage ('Build docker image'){
+         stage ('Build docker image'){
             steps {
                 script {
-                     *//*(name, pathToDockerfile)*//*
+                     /*(name, pathToDockerfile)*/
                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
-        } */
+        }
 
-               stage ('Build docker image'){
+     /*           stage ('Build docker image with bat'){
                     steps {
 
-                            /*(name, pathToDockerfile)*/
+                             *//*(name, pathToDockerfile)*//*
                            bat "docker build -t ${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG} ."
 
                     }
-                }
+                } */
 
 
         /* docker push topiahola/jenkins_docker_repo:tagname */
