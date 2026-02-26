@@ -1,4 +1,4 @@
-FROM maven:latest
+FROM maven
 LABEL authors="topi"
 
 WORKDIR /app
