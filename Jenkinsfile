@@ -3,19 +3,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/TopiAhola/Week5_jenkins_assignment.git'
             }
         }
+
         stage('Build') {
             steps {
                 bat 'mvn clean install' // sh for linux and ios
             }
         }
+
         stage('Test') {
             steps {
                 bat 'mvn test'
             }
         }
+
         stage('Code Coverage') {
             steps {
                 bat 'mvn jacoco:report'
