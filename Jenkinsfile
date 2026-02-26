@@ -12,7 +12,7 @@ pipeline {
         DOCKER_IMAGE_TAG = "latest"
         BUILD_IMAGE_NAME = "jenkinsAssignment"
         DOCKERHUB_CREDENTIALS = "dockehub_pat" //Kirjoitusvirhe jenkinsin puolella... Replace with your Jenkins credentials ID
-
+        JAVA_HOME = "C:\\Koodaus\\Kielet\\Java21"
     }
 
     /* docker tag local-image:tagname new-repo:tagname */
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'env JAVA_HOME=C:\\Koodaus\\Kielet\\Java21 mvn install' // sh for linux and ios
+                bat 'mvn clean install' // sh for linux and ios
             }
         }
 
