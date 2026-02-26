@@ -61,7 +61,7 @@ pipeline {
             steps {
                 script {
                     /*(name, pathToDockerfile)*/
-                    def builtImage = docker.build(BUILD_IMAGE_NAME+":"+DOCKER_IMAGE_TAG}, "./")
+                    def builtImage = docker.build("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "./")
                 }
             }
         }
