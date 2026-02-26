@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'PaikallinenMaven'
-        dockerTool 'Docker'
+        /* dockerTool 'Docker' */
     }
 
     environment{
