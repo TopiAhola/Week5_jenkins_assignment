@@ -10,8 +10,9 @@ pipeline {
         DOCKERHUB_ID = "topiahola"
         DOCKERHUB_REPO = "jenkins_docker_repo"
         DOCKER_IMAGE_TAG "latest"
+        BUILD_IMAGE_NAME = "jenkinsAssignment"
         DOCKERHUB_CREDENTIALS = "dockehub_pat" //Kirjoitusvirhe jenkinsin puolella... Replace with your Jenkins credentials ID
-        //dockerhub salasana Jenkinsistä?
+
     }
 
     /* docker tag local-image:tagname new-repo:tagname */
@@ -55,8 +56,9 @@ pipeline {
         stage ('Build docker image'){
             steps {
                 script {
-                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
-                } //TODO: tämä on väärin,
+                    /*(name, pathToDockerfile)*/
+                    def builtImage = docker.build("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "./")
+                }
             }
         }
 
@@ -64,9 +66,11 @@ pipeline {
          stage ('push docker image to dockerhub'){
             steps {
                 script {
-                    docker.withRegistry("'https://index.docker.io/v1/'", DOCKERHUB_CREDENTIALS)
-                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
-                    //TODO: tässä pitäisi pushata rakennettu image?
+                    //käyttää dockeria ei-oletus repositiolla
+                    docker.withRegistry("'https://index.docker.io/v1/'", DOCKERHUB_CREDENTIALS) {
+                        builtImage.push("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                    }
+
 
                 }
             }
