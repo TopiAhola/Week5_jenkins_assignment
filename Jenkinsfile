@@ -3,13 +3,13 @@ pipeline {
 
     tools {
         maven 'PaikallinenMaven'
-        dockerTool 'Docker'
+        /* dockerTool 'Docker' */
     }
 
     environment{
-        PATH = "path-to-docker ; ${env.PATH}"
+        PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
         DOCKERHUB_ID = "topiahola"
-        DOCKERHUB_REPO = "jenkins_docker_repo"
+        DOCKERHUB_REPO = "topiahola/jenkins_docker_repo"
         DOCKER_IMAGE_TAG = "latest"
         BUILD_IMAGE_NAME = "jenkinsAssignment"
         DOCKERHUB_CREDENTIALS = "dockehub_pat" //Kirjoitusvirhe jenkinsin puolella... Replace with your Jenkins credentials ID
@@ -62,7 +62,7 @@ pipeline {
             steps {
                 script {
                     /*(name, pathToDockerfile)*/
-                   docker.build("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
+                   docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
         }
@@ -73,7 +73,7 @@ pipeline {
                 script {
                     //käyttää dockeria ei-oletus repositiolla
                     docker.withRegistry("'https://index.docker.io/v1/'", DOCKERHUB_CREDENTIALS) {
-                        docker.image("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}").push()  //"${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
+                        docker.image("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}").push()
                     }
 
 
