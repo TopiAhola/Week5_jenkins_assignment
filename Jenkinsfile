@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'JAVA_HOME=C:\\Koodaus\\Kielet\\Java21 mvn clean install' // sh for linux and ios
+                bat 'env JAVA_HOME=C:\\Koodaus\\Kielet\\Java21 mvn install' // sh for linux and ios
             }
         }
 
