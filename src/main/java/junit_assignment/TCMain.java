@@ -9,10 +9,15 @@ public class TCMain {
         TemperatureConverter tc = new TemperatureConverter();
         Scanner input = new Scanner(System.in);
         System.out.println("Give temp in c:");
-        System.out.println(
-                tc.celsiusToFahrenheit(input.nextDouble())
-                + " F"
-        );
+        if(input.hasNext()) {
+            System.out.println(
+                    tc.celsiusToFahrenheit(input.nextDouble())
+                            + " F"
+            );
+
+        } else {
+            System.out.println("No input...");
+        }
 
     }
 }

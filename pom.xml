@@ -33,15 +33,32 @@
 
     <build>
        <plugins>
+
            <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-compiler-plugin</artifactId>
-               <version>3.8.1</version>
-               <!--vanha:  <version>3.8.1</version>    -->
+               <version>3.11.0</version>
                <configuration>
                    <release>21</release>
                </configuration>
            </plugin>
+
+           <!-- JAR Plugin for configuring the manifest file -->
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-jar-plugin</artifactId>
+               <version>3.4.2</version>
+               <configuration>
+                   <archive>
+                       <manifest>
+                           <!-- Correct main class, huomaa package!! -->
+                           <mainClass>junit_assignment.TCMain</mainClass>
+                       </manifest>
+                   </archive>
+               </configuration>
+           </plugin>
+
+
            <plugin>
                <groupId>org.jacoco</groupId>
                <artifactId>jacoco-maven-plugin</artifactId>
@@ -70,6 +87,7 @@
                    </excludes>
                </configuration>
            </plugin>
+
        </plugins>
    </build>
 
