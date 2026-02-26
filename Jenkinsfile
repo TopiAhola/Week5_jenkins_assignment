@@ -1,5 +1,18 @@
 pipeline {
     agent any
+
+    tools {
+        maven 'PaikallinenMaven'
+    }
+
+    environment{
+        PATH = "path-to-docker ; ${env.PATH"
+        DOCKERHUB_ID = "TopiAhola"
+        DOCKERHUB_REPO = ""
+        DOCKER_IMAGE_TAG "latest"
+        //dockerhub salasana Jenkinsistä?
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -34,5 +47,25 @@ pipeline {
                 jacoco()
             }
         }
+
+        stage ('Build docker image'){
+            steps {
+                script {
+                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                }
+            }
+        }
+
+         stage ('push docker image to dockerhub'){
+            steps {
+                script {
+                    docker.withRegistry("dockerhub.io",DOCKERHUB_REPO)
+                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                }
+            }
+        }
+
+
+
     }
 }

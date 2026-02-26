@@ -7,7 +7,8 @@ COPY pom.xml pom.xml
 
 COPY . /app
 
-RUN mvn package
+RUN mvn clean package
+
 
 
 ENTRYPOINT ["top", "-b"]
