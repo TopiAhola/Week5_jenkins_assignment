@@ -9,7 +9,7 @@ pipeline {
         PATH = "path-to-docker ; ${env.PATH}"
         DOCKERHUB_ID = "topiahola"
         DOCKERHUB_REPO = "jenkins_docker_repo"
-        DOCKER_IMAGE_TAG "latest"
+        DOCKER_IMAGE_TAG = "latest"
         BUILD_IMAGE_NAME = "jenkinsAssignment"
         DOCKERHUB_CREDENTIALS = "dockehub_pat" //Kirjoitusvirhe jenkinsin puolella... Replace with your Jenkins credentials ID
 
