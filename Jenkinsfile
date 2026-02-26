@@ -61,7 +61,7 @@ pipeline {
             steps {
                 script {
                     /*(name, pathToDockerfile)*/
-                    def builtImage = docker.build("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "./")
+                   docker.build("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
                 }
             }
         }
@@ -72,7 +72,7 @@ pipeline {
                 script {
                     //käyttää dockeria ei-oletus repositiolla
                     docker.withRegistry("'https://index.docker.io/v1/'", DOCKERHUB_CREDENTIALS) {
-                        docker.push("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
+                        docker.image("${BUILD_IMAGE_NAME}:${DOCKER_IMAGE_TAG}").push()  //"${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
                     }
 
 
