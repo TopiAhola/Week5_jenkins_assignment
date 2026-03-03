@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        /*
+
         stage('Code Coverage') {
             steps {
                 bat 'mvn jacoco:report'
@@ -47,7 +47,7 @@ pipeline {
 
          stage('Publish Test Results') {
             steps {
-                junit '**//* target/surefire-reports *//*.xml'
+                junit 'target/surefire-reports/*.xml'
             }
         }
 
@@ -56,7 +56,7 @@ pipeline {
                 jacoco()
             }
         }
-        */
+
 
          stage ('Build docker image'){
             steps {
