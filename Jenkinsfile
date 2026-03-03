@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        /*
+
         stage('Code Coverage') {
             steps {
                 bat 'mvn jacoco:report'
@@ -56,7 +56,7 @@ pipeline {
                 jacoco()
             }
         }
-        */
+
 
          stage ('Build docker image'){
             steps {
