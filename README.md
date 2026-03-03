@@ -20,6 +20,11 @@ Share the link and screenshots in Oma
 <figcaption>Screenshot of Jenkins pipeline</figcaption>
 </figure>
 
+<figure>
+<img src="week6_assignment/temp_converter_running.png" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
+<figcaption>Screenshot of temperature converter program running from container in command line</figcaption>
+</figure>
+
 
 <figure>
 <img src="week6_assignment/dockerhub_kuva.png" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
