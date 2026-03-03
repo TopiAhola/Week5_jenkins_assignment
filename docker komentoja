@@ -1,1 +1,5 @@
 docker build -t testibuild.0 .
+
+
+#ajaa imagen topiahola/jenkins_docker_repo:latest interaktiivisen terminaalin kanssa, eli System.in toimii
+docker run -it topiahola/jenkins_docker_repo:latest
