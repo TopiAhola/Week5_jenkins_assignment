@@ -1,4 +1,4 @@
-### Week 6 inclass assignment
+### Week 6 assignment
 
 Based on your Week 5 in-class assignment (Temperature Converter), implement the following steps and submit the results in Oma:
 
@@ -11,9 +11,27 @@ Extend the pipeline to deploy the image to hub.docker.com (Optional).
 #### Submission
 Share the link and screenshots in Oma
 
-1. GitHub repository link
+1. GitHub repository link  
 2. Screenshot of a successfully executed pipeline (e.g., Ocean Blue view or stage view). See the sample outout from class demo (TravelCal.java)
 3. Screenshots showing the successful execution of the labs.play.docker Docker image, See the sample outout from class demo (TravelCal.java)
+
+<figure>
+<img src="week6_assignment/jenkins_pipeline.png" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
+<figcaption>Screenshot of Jenkins pipeline</figcaption>
+</figure>
+
+
+<figure>
+<img src="week6_assignment/dockerhub_kuva.png" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
+<figcaption>Screenshot of built image running in docker container</figcaption>
+</figure>
+
+
+<figure>
+<img src="week6_assignment/play_with_docker.png" width="100%" height="auto" alt="Screenshot of Jenkins test reports">
+<figcaption>Screenshot of Play with Docker being shut down</figcaption>
+</figure>
+
 
 
 
