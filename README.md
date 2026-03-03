@@ -1,4 +1,26 @@
-### Week5_assignment
+### Week 6 inclass assignment
+
+Based on your Week 5 in-class assignment (Temperature Converter), implement the following steps and submit the results in Oma:
+
+Create a Jenkinsfile (pipeline) to generate a JaCoCo report.
+
+Build and run the local Docker image of your application and verify that everything is working correctly.
+
+Extend the pipeline to deploy the image to hub.docker.com (Optional).
+
+#### Submission
+Share the link and screenshots in Oma
+
+1. GitHub repository link
+2. Screenshot of a successfully executed pipeline (e.g., Ocean Blue view or stage view). See the sample outout from class demo (TravelCal.java)
+3. Screenshots showing the successful execution of the labs.play.docker Docker image, See the sample outout from class demo (TravelCal.java)
+
+
+
+<br>
+<br>
+
+### Week5 assignment
 Continues previous assignment
 
 1. Extend the Project with Kelvin-to-Celsius Functionality
